@@ -6,10 +6,12 @@ import biblioteka.interfejs.BibliotkaInterfejs;
 
 public class Biblioteka implements BibliotkaInterfejs {
 
+	//Lista knjiga u biblioteci
 	private LinkedList<Knjiga> knjige = new LinkedList<Knjiga>();
 	
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
+		//ne sme biti duplikata knjiga
 		if(knjiga == null || knjige.contains(knjiga)){
 			throw new RuntimeException("Greska pri unosu knjige");
 		}
